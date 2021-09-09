@@ -14,7 +14,7 @@ public class ClienteVIP extends Pessoa {
 		super();
 	}
 	
-	// ---------------- CONSTRUTOR ---------------- //
+	// ---------------- CONSTRUTOR ---------------- // 
 	
 	// Sobrecarga
 	public ClienteVIP(String p, String u, Date dt, String c, int num, String e, String g, int fv, String plan) {

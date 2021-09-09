@@ -14,7 +14,7 @@ public class Funcionario extends Pessoa {
 		super();
 	}
 	
-	// ---------------- CONSTRUTOR ---------------- //
+	// ---------------- CONSTRUTOR ---------------- // 
 	
 	// Sobrecarga
 	public Funcionario(String p, String u, Date dt, String c, int num, String e, String f, String end, double sal) {

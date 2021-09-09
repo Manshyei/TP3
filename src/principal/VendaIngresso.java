@@ -20,7 +20,7 @@ public class VendaIngresso extends Venda {
 		recibo = rec;
 		qntddIngressos = qntd;
 		ingresso = i;
-	}
+	} 
 	
 	public VendaIngresso(String f, double preco, int rec) {
 		formaPagamento = f;

@@ -15,7 +15,7 @@ public class Ingresso {
 	private String idioma;
 	private int horarioSessao;
 	private Date dataExibicao;
-	
+	 
 	// ---------------- CONSTRUTOR ---------------- //
 	
 	public Ingresso(String a, int b, String c, int d, char e, String f, String g, int h, Date i) {

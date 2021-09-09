@@ -21,7 +21,7 @@ public class SalaCinema {
 		formato = d;
 		qnddLinhasCadeiras = e;
 		qnddColunasCadeiras = f;
-		cadeiraVaga = g;
+		cadeiraVaga = g; 
 	}
 		
 	// ------------------ METODOS ------------------ //

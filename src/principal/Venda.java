@@ -19,7 +19,7 @@ public abstract class Venda {
 	// ------------ GETTERS AND SETTERS ------------ //
 	
 	public String getFormaPagamento() {
-		return formaPagamento;
+		return formaPagamento; 
 	}
 
 	public void setFormaPagamento(String formaPagamento) {

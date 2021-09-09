@@ -16,7 +16,7 @@ public class Filme {
 	private int salaTransmissao;
 	private Programacao programacao;
 	
-	// ---------------- CONSTRUTOR ---------------- //
+	// ---------------- CONSTRUTOR ---------------- // 
 	
 	public Filme(String a, int b, int c, String d, String e, String f, Date g, int h, Programacao i) {
 		nome = a;

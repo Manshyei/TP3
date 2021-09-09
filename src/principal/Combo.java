@@ -11,7 +11,7 @@ public class Combo {
 	private double preco;
 	private String tipoDoce;
 		
-	// ---------------- CONSTRUTOR ---------------- //
+	// ---------------- CONSTRUTOR ---------------- // 
 	
 	public Combo(String a, String b, String c, String d, double e, String f) {
 		tipoPipoca = a;

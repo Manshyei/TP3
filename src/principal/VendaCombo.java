@@ -19,7 +19,7 @@ public class VendaCombo extends Venda {
 		precoTotal = preco;
 		recibo = rec;
 		qntddCombos = qntd;
-		combo = com;
+		combo = com; 
 	}
 	
 	public VendaCombo(String f, double preco, int rec) {

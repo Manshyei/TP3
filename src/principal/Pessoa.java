@@ -14,7 +14,7 @@ public abstract class Pessoa {
 	protected String email;
 	
 	public Pessoa() {
-		super();
+		super(); 
 	}
 		
 	// ---------------- CONSTRUTOR ---------------- //
