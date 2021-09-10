@@ -38,7 +38,7 @@ public class ClienteVIP extends Pessoa {
 		this.email = email;
 	}
 	
-	// ------------------ METODOS ------------------ //
+	// ------------------ METODOS ------------------- //
 	
 	//
 	
