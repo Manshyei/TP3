@@ -3,34 +3,26 @@ package principal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class VendaIngresso extends Venda {
+public class VendaIngresso{
 
 	// ----------------- ATRIBUTOS ----------------- //
 
+	private String formaPagamento;
+	private double precoTotal;
+	private int recibo;
 	private int qntddIngressos;
 	private Ingresso ingresso;
 	
-	public VendaIngresso(){
-		super();
-	}
-	
 	// ---------------- CONSTRUTOR ---------------- //
 	
-	// Sobrecarga
 	public VendaIngresso(String formaDePagamento, double preco, int rec, int qntd_ingressos, Ingresso i) {
 		formaPagamento = formaDePagamento;
 		precoTotal = preco;
 		recibo = rec;
 		qntddIngressos = qntd_ingressos;
-		ingresso = i;
+		this.ingresso = i;
 	} 
-	
-	public VendaIngresso(String formaDePagamento, double preco, int rec) {
-		formaPagamento = formaDePagamento;
-		precoTotal = preco;
-		recibo = rec;
-	}
-	
+
 	// ---------------- METODOS ---------------- //
 	
 	// Funcionalidades:

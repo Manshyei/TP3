@@ -65,6 +65,58 @@ public class ClienteVIP extends Pessoa {
 		
 	}
 	
+	// Funcao para editar os dados de Cliente:
+	
+	public void editar(ClienteVIP cliente) {
+		
+		int num = 0;
+		
+		do {
+			System.out.println("Selecione a opção desejada:\n"
+					+ "1-Editar o número de celular\n"
+					+ "2-Editar o genêro favorito\n"
+					+ "3-Editar o e-mail\n"
+					+ "4-Editar a quantidade de filmes vistos\n"
+					+ "5-Editar o plano de assinatura\n"
+					+ "6-Sair\n");
+			
+			num = input.nextInt();
+			
+			switch (num) {
+				
+				case 1: 
+					System.out.println("Digite o novo número de celular do cliente:\n");
+					cliente.setNumCelular(input.nextLine());
+					break;
+				case 2:
+					System.out.println("Digite o novo gênero favorito do cliente:\n");
+					cliente.setGeneroFavorito(input.nextLine());
+					break;
+				case 3:
+					System.out.println("Digite o novo e-mail:\n");
+					cliente.setEmail(input.nextLine());
+					break;
+				case 4:
+					System.out.println("Digite a nova quantidade de filmes vistos do cliente:\n");
+					cliente.setQntddFilmesVistos(input.nextInt());
+					break;
+				case 5:
+					System.out.println("Digite o novo plano de assinatura do cliente:\n");
+					cliente.setPlanoAssinatura(input.nextLine());
+					break;
+				case 6:
+					System.out.println("Retornando ao menu\n");
+					break;
+				default:
+					System.out.println("Não foi escolhida nenhuma opção válida\n"
+									   + "Por favor insira um número novamente");
+					break;
+					
+			}
+		} while (1 > num || num > 6);
+			
+	}
+	
 	public void deletar(ClienteVIP[] cliente, String cpf) {
 		
 	}
