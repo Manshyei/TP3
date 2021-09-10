@@ -38,11 +38,10 @@ public class ClienteVIP extends Pessoa {
 		this.email = email;
 	}
 	
-	// ------------------ METODOS ------------------- //
-	
 	// Funcionalidades:
 	
 	Scanner input = new Scanner(System.in);	
+	Scanner ler = new Scanner(System.in);
 	ArrayList<ClienteVIP> dadosCliente = new ArrayList<ClienteVIP>();
 	
 	// Pré-cadastro de dados do cliente:
@@ -61,15 +60,53 @@ public class ClienteVIP extends Pessoa {
 		dadosCliente.add(cliente5);
 	}
 	
+	// ------------------ METODOS ------------------- //
+	
+	// Funcao para cadastrar os dados de Cliente:
+	
 	public void cadastrar() {
+		String primNome, ultNome, data, cpf, numCel, email, genFav, planAss;
+		int qntdFilmesVistos;
+				
+		System.out.println("Primeiro Nome: ");
+		primNome = input.nextLine();
+		System.out.println("Último Nome: ");
+		ultNome = input.nextLine();
+		System.out.println("Data de Nascimento: ");
+		data = input.nextLine();
+		System.out.println("CPF: ");
+		cpf = input.nextLine();
+		System.out.println("Número de Celular: ");
+		numCel = input.nextLine();
+		System.out.println("E-mail: ");
+		email = input.nextLine();
+		System.out.println("Gênero Favorito: ");
+		genFav = input.nextLine();
+		System.out.println("Plano de Assinatura: ");
+		planAss = input.nextLine();
+		System.out.println("Quantidade de Filmes Vistos: ");
+		qntdFilmesVistos = ler.nextInt();
 		
+		ClienteVIP cliente = new ClienteVIP(primNome, ultNome, data, cpf, numCel, email, genFav, qntdFilmesVistos, planAss);
+		dadosCliente.add(cliente);
+		
+	}
+	
+	// Funcao para buscar um Cliente Especifico por CPF:
+	public ClienteVIP buscar(String cpf) {
+		for(int i = 0; i < dadosCliente.size(); i ++) 
+			if(cpf.equals(dadosCliente.get(i).getCpf())) {
+				System.out.println(dadosCliente.get(i).toString());
+				return dadosCliente.get(i);
+			}
+		return null;
 	}
 	
 	// Funcao para editar os dados de Cliente:
 	
 	public void editar(ClienteVIP cliente) {
 		
-		int num = 0;
+		int num;
 		
 		do {
 			System.out.println("Selecione a opção desejada:\n"
@@ -80,7 +117,7 @@ public class ClienteVIP extends Pessoa {
 					+ "5-Editar o plano de assinatura\n"
 					+ "6-Sair\n");
 			
-			num = input.nextInt();
+			num = ler.nextInt();
 			
 			switch (num) {
 				
@@ -98,7 +135,7 @@ public class ClienteVIP extends Pessoa {
 					break;
 				case 4:
 					System.out.println("Digite a nova quantidade de filmes vistos do cliente:\n");
-					cliente.setQntddFilmesVistos(input.nextInt());
+					cliente.setQntddFilmesVistos(ler.nextInt());
 					break;
 				case 5:
 					System.out.println("Digite o novo plano de assinatura do cliente:\n");
@@ -111,18 +148,30 @@ public class ClienteVIP extends Pessoa {
 					System.out.println("Não foi escolhida nenhuma opção válida\n"
 									   + "Por favor insira um número novamente");
 					break;
-					
 			}
 		} while (1 > num || num > 6);
 			
 	}
 	
-	public void deletar(ClienteVIP[] cliente, String cpf) {
+	public void deletar(ClienteVIP cliente) {
+		
+		dadosCliente.remove(dadosCliente.indexOf(cliente));
 		
 	}
 	
 	public String toString() {	
-		return "Nome do cliente VIP: " + primeiroNome;
+		return "Nome do cliente VIP: " + primeiroNome + " " + ultimoNome + "\n" 
+			   + "Data de Nascimento: " + dataNascimento + "\n" + "CPF: " + cpf + "\n" 
+			   + "Número de Celular: " + numCelular + "\n" + "E-mail:" + email + "\n" 
+			   + "Gênero Favorito: " + generoFavorito + "\n" + "Quantidade de Filmes Vistos: "
+			   + qntddFilmesVistos + "\n" + "Plano de Assinatura" + planoAssinatura + "\n";
+	}
+	
+	public void visualizar() {
+		System.out.println(dadosCliente.size());
+		for(int i = 0; i < dadosCliente.size(); i ++) {
+			System.out.println(dadosCliente.get(i).toString());
+		}
 	}
 	
 	// ------------ GETTERS AND SETTERS ------------ //

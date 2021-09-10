@@ -40,11 +40,11 @@ public class Funcionario extends Pessoa {
 		this.email = email;
 	}
 	
-	// ------------------ METODOS ------------------ //
-	
 	// Funcionalidades:
 	
 	Scanner input = new Scanner(System.in);	
+	Scanner ler = new Scanner(System.in);
+	Scanner lerd = new Scanner(System.in);	
 	ArrayList<Funcionario> dadosFuncionario = new ArrayList<Funcionario>();
 	
 	// Pré-cadastro de dados do cliente:
@@ -63,9 +63,119 @@ public class Funcionario extends Pessoa {
 		dadosFuncionario.add(funcionario5);
 	}
 	
-	public String toString() {
-		return "Nome do funcionario: " + primeiroNome + ", valor do salario: R$" + salario;
-	}
+	// ------------------ METODOS ------------------ //
+	
+	// Funcao para cadastrar os dados de Funcionario:
+	
+		public void cadastrar() {
+			String primNome, ultNome, data, cpf, numCel, email, funcao, endereco;
+			double salario;
+					
+			System.out.println("Primeiro Nome: ");
+			primNome = input.nextLine();
+			System.out.println("Último Nome: ");
+			ultNome = input.nextLine();
+			System.out.println("Data de Nascimento: ");
+			data = input.nextLine();
+			System.out.println("CPF: ");
+			cpf = input.nextLine();
+			System.out.println("Número de Celular: ");
+			numCel = input.nextLine();
+			System.out.println("E-mail: ");
+			email = input.nextLine();
+			System.out.println("Função: ");
+			funcao = input.nextLine();
+			System.out.println("Endereço: ");
+			endereco = input.nextLine();
+			System.out.println("Salário: ");
+			salario = lerd.nextDouble();
+			
+			Funcionario funcionario = new Funcionario(primNome, ultNome, data, cpf, numCel, email, funcao, endereco, salario);
+			dadosFuncionario.add(funcionario);
+			
+		}
+		
+		// Funcao para buscar um Funcionario Especifico por CPF:
+		public Funcionario buscar(String cpf) {
+			for(int i = 0; i < dadosFuncionario.size(); i ++) 
+				if(cpf.equals(dadosFuncionario.get(i).getCpf())) {
+					System.out.println(dadosFuncionario.get(i).toString());
+					return dadosFuncionario.get(i);
+				}
+			return null;
+		}
+		
+		// Funcao para editar os dados de Cliente:
+		
+		public void editar(Funcionario cliente) {
+			
+			int num;
+			
+			do {
+				System.out.println("Selecione a opção desejada:\n"
+						+ "1-Editar o número de celular\n"
+						+ "2-Editar o endereço\n"
+						+ "3-Editar o e-mail\n"
+						+ "4-Editar a função\n"
+						+ "5-Editar o salário\n"
+						+ "6-Sair\n");
+				
+				num = ler.nextInt();
+				
+				switch (num) {
+					
+					case 1: 
+						System.out.println("Digite o novo número de celular do funcionário:\n");
+						cliente.setNumCelular(input.nextLine());
+						break;
+					case 2:
+						System.out.println("Digite o novo endereço favorito do funcionário:\n");
+						cliente.setEndereco(input.nextLine());
+						break;
+					case 3:
+						System.out.println("Digite o novo e-mail:\n");
+						cliente.setEmail(input.nextLine());
+						break;
+					case 4:
+						System.out.println("Digite a nova função do funcionário:\n");
+						cliente.setFuncao(ler.nextLine());
+						break;
+					case 5:
+						System.out.println("Digite o novo salário do funcionário:\n");
+						cliente.setSalario(input.nextDouble());
+						break;
+					case 6:
+						System.out.println("Retornando ao menu\n");
+						break;
+					default:
+						System.out.println("Não foi escolhida nenhuma opção válida\n"
+										   + "Por favor insira um número novamente");
+						break;
+				}
+			} while (1 > num || num > 6);
+				
+		}
+		
+		public void deletar(Funcionario funcionario) {
+			
+			dadosFuncionario.remove(dadosFuncionario.indexOf(funcionario));
+			
+		}
+		
+		public String toString() {	
+			return "Nome do Funcionário: " + primeiroNome + " " + ultimoNome + "\n" 
+				   + "Data de Nascimento: " + dataNascimento + "\n" + "CPF: " + cpf + "\n" 
+				   + "Número de Celular: " + numCelular + "\n" + "E-mail:" + email + "\n" 
+				   + "função: " + funcao + "\n" + "Salário: "
+				   + salario + "\n" + "Endereço" + endereco + "\n";
+		}
+		
+		public void visualizar() {
+			System.out.println(dadosFuncionario.size());
+			for(int i = 0; i < dadosFuncionario.size(); i ++) {
+				System.out.println(dadosFuncionario.get(i).toString());
+			}
+		}
 
 	// ------------ GETTERS AND SETTERS ------------ //
 	

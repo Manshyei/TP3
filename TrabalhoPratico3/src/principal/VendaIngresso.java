@@ -28,6 +28,9 @@ public class VendaIngresso{
 	// Funcionalidades:
 	
 	Scanner input = new Scanner(System.in);	
+	Scanner ler = new Scanner(System.in);	
+	Scanner lerd = new Scanner(System.in);
+	Scanner lerc = new Scanner(System.in);
 	ArrayList<VendaIngresso> dadosVendaIngresso = new ArrayList<VendaIngresso>();
 	
 	// Pré-cadastro de dados do cliente:
@@ -49,6 +52,45 @@ public class VendaIngresso{
 		dadosVendaIngresso.add(venda3);
 		dadosVendaIngresso.add(venda4);
 		dadosVendaIngresso.add(venda5);
+	}
+	
+	public void cadastrar() {
+		String formaPagamento, tipoIngresso, tipoSala, nomeFilme, idioma, dataExibicao;
+		int qntddIngressos, numSala, recibo, numCadeira, horarioSessao;
+		double precoTotal;
+		char letraCadeira;
+				
+		System.out.println("Forma de Pagamento: \n");
+		formaPagamento = input.nextLine();
+		System.out.println("Preço Total: \n");
+		precoTotal = lerd.nextDouble();
+		System.out.println("N° de Recibo: \n");
+		recibo = ler.nextInt();
+		System.out.println("Tipo de Ingresso: \n");
+		tipoIngresso = input.nextLine();
+		System.out.println("Tipo de Sala: \n");
+		tipoSala = input.nextLine();
+		System.out.println("Nome do Filme: \n");
+		nomeFilme = input.nextLine();
+		System.out.println("Idioma: \n");
+		idioma = input.nextLine();
+		System.out.println("Data de Exibição: \n");
+		dataExibicao = input.nextLine();
+		System.out.println("Quantidade de Ingresso: \n");
+		qntddIngressos = ler.nextInt();
+		System.out.println("N° da Sala: \n");
+		numSala = ler.nextInt();
+		System.out.println("N° da Cadeira: \n");
+		numCadeira = ler.nextInt();
+		System.out.println("Horário da Sessão: \n");
+		horarioSessao = ler.nextInt();
+		System.out.println("Horário da Sessão: \n");
+		letraCadeira = lerc.next().charAt(0);
+		
+		Ingresso inaux = new Ingresso(tipoIngresso, numSala, tipoSala, numCadeira, letraCadeira, nomeFilme, idioma, horarioSessao, dataExibicao);
+		VendaIngresso vendaux = new VendaIngresso(formaPagamento, precoTotal, recibo, qntddIngressos, inaux);
+		dadosVendaIngresso.add(vendaux);
+		
 	}
 	
 	public String toString() {

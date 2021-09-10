@@ -32,7 +32,6 @@ public class Ingresso {
 	// ------------------ METODOS ------------------ //
 	
 	// Funcionalidades:
-	
 	Scanner scan = new Scanner(System.in);
 		
 	// ------------ GETTERS AND SETTERS ------------ //
