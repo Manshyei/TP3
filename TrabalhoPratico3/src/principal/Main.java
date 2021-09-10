@@ -260,7 +260,7 @@ public class Main {
 						break;
 					case 5:
 						System.out.println("Digite o número da sala a ser procurado:\n");
-						numsala = input.nextLine();
+						numsala = ler.nextInt();
 						if (sala.buscar(numsala) != null)
 							sala.buscar(numsala);
 						break;
@@ -276,7 +276,7 @@ public class Main {
 					
 				///usuário escolhe sair do menu
 				case 6:
-					System.out.println("Saindo...");
+					System.out.println("Saindo... Volte Sempre!");
 					break;
 					
 				///usuário não escolhe nenhuma opção entre as opções acima

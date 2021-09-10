@@ -14,6 +14,7 @@ public class Ingresso {
 	private String idioma;
 	private int horarioSessao;
 	private String dataExibicao;
+	private VendaIngresso venda[];
 	 
 	// ---------------- CONSTRUTOR ---------------- //
 	

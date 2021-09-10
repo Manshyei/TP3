@@ -11,6 +11,7 @@ public class SalaCinema {
 	private int qnddLinhasCadeiras;
 	private int qnddColunasCadeiras;
 	private boolean cadeiraVaga;
+	private Ingresso ingresso[];
 	
 	public SalaCinema(){
 		super();
@@ -94,8 +95,9 @@ public class SalaCinema {
 					switch (num) {
 
 						case 1: 
-							System.out.println("Existem cadeiras vagas?\n");
+							System.out.println("Existem cadeiras vagas? Digite 'true' ou 'false'\n");
 							sala.setCadeiraVaga(input.nextBoolean());
+							System.out.println("Alteração feita com sucesso\n");
 							break;
 						case 2:
 							System.out.println("Retornando ao menu...\n");
@@ -121,7 +123,8 @@ public class SalaCinema {
 					   + "Quantidade de cadeiras: " + qntddCadeiras + "\n" 
 					   + "Formato: " + formato + "\n"
 					   + "Quantidade de linhas: " + qnddLinhasCadeiras + "\n"
-					   + "Quantidade de colunas: " + qnddColunasCadeiras + "\n";
+					   + "Quantidade de colunas: " + qnddColunasCadeiras + "\n"
+					   + "Cadeiras vagas: " + cadeiraVaga + "\n";
 					  
 			}
 
@@ -130,6 +133,15 @@ public class SalaCinema {
 				for(int i = 0; i < dadosSala.size(); i ++) {
 					System.out.println(dadosSala.get(i).toString());
 				}
+			}
+			
+			public SalaCinema buscar(int numSala) {
+				for(int i = 0; i < dadosSala.size(); i ++) 
+					if(numSala == (dadosSala.get(i).getNumSala())) {
+						System.out.println(dadosSala.get(i).toString());
+						return dadosSala.get(i);
+					}
+				return null;
 			}
 
 	// ------------ GETTERS AND SETTERS ------------ //
