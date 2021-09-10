@@ -54,7 +54,7 @@ public class ClienteVIP extends Pessoa {
 		return "Nome do cliente VIP: " + primeiroNome;
 	}
 	
-	// ------------ GETTERS AND SETTERS ------------- //
+	// ------------ GETTERS AND SETTERS ------------ //
 	
 	public String getPrimeiroNome() {
 		return primeiroNome;
