@@ -1,5 +1,5 @@
 package principal;
-
+import java.util.*;
 public class SalaCinema {
 	
 	// ----------------- ATRIBUTOS ----------------- //
@@ -14,17 +14,35 @@ public class SalaCinema {
 	
 	// ---------------- CONSTRUTOR ---------------- //
 	
-	public SalaCinema(int numero_sala, String tipo_sala, int qtd_cadeiras, String formato_sala, int qtd_linhas, int qtd_colunas, boolean cadeiraVaga) {
+	public SalaCinema(int numero_sala, String tipo_sala, int qtd_cadeiras, String formato_sala, int qtd_linhas, int qtd_colunas, boolean cadeira_vaga) {
 		numSala = numero_sala;
 		tipoSala = tipo_sala;
 		qntddCadeiras = qtd_cadeiras;
 		formato = formato_sala;
 		qnddLinhasCadeiras = qtd_linhas;
 		qnddColunasCadeiras = qtd_colunas;
-		this.cadeiraVaga = cadeiraVaga; 
+		cadeiraVaga = cadeira_vaga; 
 	}
-		
 	
+	// ------------- DADOS PRÉ-CADASTRADOS ----------//
+	Scanner input = new Scanner(System.in);	
+	ArrayList<SalaCinema> dadosSala = new ArrayList<SalaCinema>();
+	
+	public void dadosPreCadastradosSala(){
+		
+		SalaCinema sala1 = new SalaCinema(1,"3D",90,"Quadrado",15,6,true);
+		SalaCinema sala2 = new SalaCinema(2,"VIP",50,"Quadrado",25,5,false);
+		SalaCinema sala3 = new SalaCinema(3,"Normal",80,"Piramide",20,4,true);
+		SalaCinema sala4 = new SalaCinema(4,"Normal",100,"Quadrado",25,5,false);
+		SalaCinema sala5 = new SalaCinema(5,"Normal",100,"Quadrado",25,5,true);
+		
+		dadosSala.add(sala1);
+		dadosSala.add(sala2);
+		dadosSala.add(sala3);
+		dadosSala.add(sala4);
+		dadosSala.add(sala5);
+		
+	}
 
 
 	// ------------ GETTERS AND SETTERS ------------ //

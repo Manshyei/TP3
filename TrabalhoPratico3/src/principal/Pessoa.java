@@ -8,9 +8,9 @@ public abstract class Pessoa {
 	
 	protected String primeiroNome;
 	protected String ultimoNome;
-	protected Date dataNascimento;
+	protected String dataNascimento;
 	protected String cpf;
-	protected int numCelular;
+	protected String numCelular;
 	protected String email;
 	
 	public Pessoa() {
@@ -38,11 +38,11 @@ public abstract class Pessoa {
 		this.ultimoNome = ultimoNome;
 	}
 
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -54,11 +54,11 @@ public abstract class Pessoa {
 		this.cpf = cpf;
 	}
 
-	public int getNumCelular() {
+	public String getNumCelular() {
 		return numCelular;
 	}
 
-	public void setNumCelular(int numCelular) {
+	public void setNumCelular(String numCelular) {
 		this.numCelular = numCelular;
 	}
 

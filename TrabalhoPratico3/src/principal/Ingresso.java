@@ -1,7 +1,6 @@
 package principal;
 
-import java.util.Date;
-
+import java.util.*;
 public class Ingresso {
 
 	// ----------------- ATRIBUTOS ----------------- //
@@ -14,24 +13,27 @@ public class Ingresso {
 	private String nomeFilme;
 	private String idioma;
 	private int horarioSessao;
-	private Date dataExibicao;
+	private String dataExibicao;
 	 
 	// ---------------- CONSTRUTOR ---------------- //
 	
-	public Ingresso(String tipoIngresso, int numSala, String tipoSala, int numCadeira, char letraCadeira, String nomeDoFilme, String idiomaFilme, int hora, Date dataExibicao) {
-		this.tipoIngresso = tipoIngresso;
-		this.numSala = numSala;
-		this.tipoSala = tipoSala;
-		this.numCadeira = numCadeira;
-		this.letraCadeira = letraCadeira;
+	public Ingresso(String tipo_ingresso, int num_sala, String tipo_sala, int num_cadeira, char letra_cadeira, String nomeDoFilme, String idiomaFilme, int hora, String data_exibicao) {
+		tipoIngresso = tipo_ingresso;
+		numSala = num_sala;
+		tipoSala = tipo_sala;
+		numCadeira = num_cadeira;
+		letraCadeira = letra_cadeira;
 		nomeFilme = nomeDoFilme;
 		idioma = idiomaFilme;
 		horarioSessao = hora;
-		this.dataExibicao = dataExibicao;
+		dataExibicao = data_exibicao;
 	}
 		
 	// ------------------ METODOS ------------------ //
-
+	
+	// Funcionalidades:
+	
+	Scanner scan = new Scanner(System.in);
 		
 	// ------------ GETTERS AND SETTERS ------------ //
 
@@ -99,11 +101,11 @@ public class Ingresso {
 		this.horarioSessao = horarioSessao;
 	}
 
-	public Date getDataExibicao() {
+	public String getDataExibicao() {
 		return dataExibicao;
 	}
 
-	public void setDataExibicao(Date dataExibicao) {
+	public void setDataExibicao(String dataExibicao) {
 		this.dataExibicao = dataExibicao;
 	}
 		
