@@ -69,5 +69,9 @@ public abstract class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public void deletar(Pessoa[] pessoas, String cpf) {
+		
+	}
 		
 }

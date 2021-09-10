@@ -40,6 +40,16 @@ public class ClienteVIP extends Pessoa {
 	
 	// ------------------ METODOS ------------------ //
 	
+	//
+	
+	public void cadastrar() {
+		
+	}
+	
+	public void deletar(ClienteVIP[] cliente, String cpf) {
+		
+	}
+	
 	public String toString() {	
 		return "Nome do cliente VIP: " + primeiroNome;
 	}
@@ -117,5 +127,6 @@ public class ClienteVIP extends Pessoa {
 	public void setPlanoAssinatura(String planoAssinatura) {
 		this.planoAssinatura = planoAssinatura;
 	}
-
+		
+	
 }
