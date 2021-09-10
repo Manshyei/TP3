@@ -164,11 +164,10 @@ public class ClienteVIP extends Pessoa {
 			   + "Data de Nascimento: " + dataNascimento + "\n" + "CPF: " + cpf + "\n" 
 			   + "Número de Celular: " + numCelular + "\n" + "E-mail:" + email + "\n" 
 			   + "Gênero Favorito: " + generoFavorito + "\n" + "Quantidade de Filmes Vistos: "
-			   + qntddFilmesVistos + "\n" + "Plano de Assinatura" + planoAssinatura + "\n";
+			   + qntddFilmesVistos + "\n" + "Plano de Assinatura: " + planoAssinatura + "\n";
 	}
 	
 	public void visualizar() {
-		System.out.println(dadosCliente.size());
 		for(int i = 0; i < dadosCliente.size(); i ++) {
 			System.out.println(dadosCliente.get(i).toString());
 		}

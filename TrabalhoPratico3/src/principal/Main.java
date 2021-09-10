@@ -9,17 +9,22 @@ public class Main {
 	public static void main(String[] args) {
 		
 		// Funcionalidades:
-		int num1, num2, i = 1; //num1 é uma variável de controle pro primeiro menu, e num2 é uma variável de controle pro segundo menu.
+		int num1, num2, numsala; //num1 é uma variável de controle pro primeiro menu, e num2 é uma variável de controle pro segundo menu.
 		Scanner input = new Scanner(System.in);	//declaração de variáveis para receber entrada do usuário do tipo String.
 		Scanner ler = new Scanner(System.in); //declaração de variáveis para receber entrada do usuário do tipo Int.
 		ClienteVIP cliente = new ClienteVIP(); //criação do objeto cliente.
-		String cpf;
-		//VendaIngresso ingresso = new VendaIngresso(); //criação do objeto ingresso
-		//Filme filme = new Filme();//criação do objeto filme
-		String nomefilme;
+		String cpf, nomefilme;
+		VendaIngresso ingresso = new VendaIngresso(); //criação do objeto ingresso
+		Filme filme = new Filme(); // criação do objeto filme
 		Funcionario funcionario = new Funcionario();
-		//SalaCinema salacinema = new SalaCinema();
-		int numsala;
+		SalaCinema sala = new SalaCinema();
+		
+		// Dados Pre Cadastrados:
+		cliente.dadosPreCadastradosClientes();
+		filme.dadosPreCadastradosFilmes();
+		funcionario.dadosPreCadastradosFuncionario();
+		ingresso.dadosPreCadastradosVendaIngresso();
+		sala.dadosPreCadastradosSala();
 		
 		// Menu:
 		do {
@@ -87,8 +92,8 @@ public class Main {
 					}
 				break;
 				
-				/// usuário escolhe Filme
-				/*case 2:
+				// usuário escolhe Filme
+				case 2:
 					System.out.println("Selecione a opção desejada:\n"
 							+ "1-Cadastrar filme\n"
 							+ "2-Visualizar filmes\n"
@@ -97,7 +102,7 @@ public class Main {
 							+ "5-Buscar filme por nome\n"
 							+ "6-Sair\n");
 					
-					/// --- ENTRA MENU 2 PRO FILME
+					// --- ENTRA MENU 2 PRO FILME
 					num2 = ler.nextInt();
 					switch (num2) {
 					
@@ -135,14 +140,14 @@ public class Main {
 					default:
 						System.out.println("Não foi escolhida nenhuma opção válida\n"
 										   + "Voltando ao menu!");
-						break;
-					}
 					break;
+					}
+				break;
 					
-				/// usuário escolhe Funcionário*/
+					
+				// usuário escolhe Funcionário
 				
-				
-				/*case 3:
+				case 3:
 					System.out.println("Selecione a opção desejada:\n"
 							+ "1-Cadastrar funcionário\n"
 							+ "2-Visualizar funcionários\n"
@@ -232,32 +237,32 @@ public class Main {
 					switch (num2) {
 					
 					case 1:
-						salacinema.cadastrar();
+						sala.cadastrar();
 						break;
 					case 2:
-						salacinema.visualizar();
+						sala.visualizar();
 						break;
 					case 3:
-						salacinema.visualizar();
+						sala.visualizar();
 						System.out.println("Digite o número da sala a ser editado:\n");
 						numsala = input.nextInt();
-						if (salacinema.buscar(numsala) != null)
-							salacinema.editar(salacinema.buscar(numsala));
+						if (sala.buscar(numsala) != null)
+							sala.editar(sala.buscar(numsala));
 						else System.out.println("Opção inválida, voltando ao menu!\n");
 						break;
 					case 4:
-						salacinema.visualizar();
+						sala.visualizar();
 						System.out.println("Digite o número da sala a ser deletado:\n");
 						numsala = input.nextInt();
-						if (salacinema.buscar(numsala) != null)
-							salacinema.deletar(salacinema.buscar(numsala));
+						if (sala.buscar(numsala) != null)
+							sala.deletar(sala.buscar(numsala));
 						else System.out.println("Opção inválida, voltando ao menu!\n");
 						break;
 					case 5:
 						System.out.println("Digite o número da sala a ser procurado:\n");
 						numsala = input.nextLine();
-						if (salacinema.buscar(numsala) != null)
-							salacinema.buscar(numsala);
+						if (sala.buscar(numsala) != null)
+							sala.buscar(numsala);
 						break;
 					case 6:
 						System.out.println("Retornando ao menu\n");
@@ -277,9 +282,12 @@ public class Main {
 				///usuário não escolhe nenhuma opção entre as opções acima
 				default:
 					System.out.println("Você não inseriu nenhuma opção válida. Por favor, escolha novamente!\n");
-					break;	*/
+					break;	
 			}
-		} while (i == 1);
+			
+			if (num1 == 6) break; // Saida do Programa
+			
+		} while (true);
 
 	
 	}

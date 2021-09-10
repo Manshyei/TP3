@@ -13,6 +13,10 @@ public class VendaIngresso{
 	private int qntddIngressos;
 	private Ingresso ingresso;
 	
+	public VendaIngresso(){
+		super();
+	}
+	
 	// ---------------- CONSTRUTOR ---------------- //
 	
 	public VendaIngresso(String formaDePagamento, double preco, int rec, int qntd_ingressos, Ingresso i) {

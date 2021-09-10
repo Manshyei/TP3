@@ -12,6 +12,10 @@ public class SalaCinema {
 	private int qnddColunasCadeiras;
 	private boolean cadeiraVaga;
 	
+	public SalaCinema(){
+		super();
+	}
+	
 	// ---------------- CONSTRUTOR ---------------- //
 	
 	public SalaCinema(int numero_sala, String tipo_sala, int qtd_cadeiras, String formato_sala, int qtd_linhas, int qtd_colunas, boolean cadeira_vaga) {
@@ -43,7 +47,90 @@ public class SalaCinema {
 		dadosSala.add(sala5);
 		
 	}
+	
+	// ------------------ METODOS ------------------ //
 
+		// Funcao para cadastrar os dados da Sala de Cinema:
+
+			public void cadastrar() {
+				String tiposala, formato;
+				int numsala, qtdcadeiras,qtdlinhas,qtdcolunas;
+				boolean cadeiraVaga;
+
+				System.out.println("Formato da sala: ");
+				formato = input.nextLine();
+				System.out.println("Tipo da sala: ");
+				tiposala = input.nextLine();
+				System.out.println("Número da sala: ");
+				numsala = input.nextInt();
+				System.out.println("Quantidade de cadeiras: ");
+				qtdcadeiras = input.nextInt();
+				System.out.println("Quantidade de linhas: ");
+				qtdlinhas = input.nextInt();
+				System.out.println("Quantidade de colunas: ");
+				qtdcolunas = input.nextInt();
+				System.out.println("Há cadeiras vagas? ");
+				cadeiraVaga = input.nextBoolean();
+				
+				SalaCinema sala = new SalaCinema(numsala, tiposala, qtdcadeiras, formato, qtdlinhas, qtdcolunas, cadeiraVaga);
+				dadosSala.add(sala);
+
+			}
+
+			// Funcao para editar os dados da sala de Cinema:
+
+			public void editar(SalaCinema sala) {
+
+				int num;
+
+				do {
+					System.out.println("Selecione a opção desejada:\n"
+							+ "1-Editar o se existem ou não cadeiras vagas\n"
+							+ "2-Sair\n");
+							
+
+					num = input.nextInt();
+
+					switch (num) {
+
+						case 1: 
+							System.out.println("Existem cadeiras vagas?\n");
+							sala.setCadeiraVaga(input.nextBoolean());
+							break;
+						case 2:
+							System.out.println("Retornando ao menu...\n");
+							break;
+						default:
+							System.out.println("Não foi escolhida nenhuma opção válida\n"
+											   + "Por favor insira um número novamente");
+							break;
+					}
+				} while (1 > num || num > 2);
+
+			}
+
+			public void deletar(SalaCinema sala) {
+
+				dadosSala.remove(dadosSala.indexOf(sala));
+
+			}
+
+			public String toString() {	
+				return "Número da sala: " + numSala + "\n" 
+					   + "Tipo da sala: " + tipoSala + "\n" 
+					   + "Quantidade de cadeiras: " + qntddCadeiras + "\n" 
+					   + "Formato: " + formato + "\n"
+					   + "Quantidade de linhas: " + qnddLinhasCadeiras + "\n"
+					   + "Quantidade de colunas: " + qnddColunasCadeiras + "\n";
+					  
+			}
+
+			public void visualizar() {
+				System.out.println(dadosSala.size());
+				for(int i = 0; i < dadosSala.size(); i ++) {
+					System.out.println(dadosSala.get(i).toString());
+				}
+			}
 
 	// ------------ GETTERS AND SETTERS ------------ //
 	

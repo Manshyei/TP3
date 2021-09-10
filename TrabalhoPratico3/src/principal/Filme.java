@@ -16,6 +16,10 @@ public class Filme {
 	private int salaTransmissao;
 	private Programacao programacao;
 	
+	public Filme(){
+		super();
+	}
+	
 	// ---------------- CONSTRUTOR ---------------- // 
 	
 	public Filme(String nomeDoFilme, int duracaoDoFilme, int classificacao, String idiomaDoFilme, String sinopseFilme, String generoFilme, String data_lancamento, int sala_transmissao, Programacao prog) {
@@ -32,7 +36,7 @@ public class Filme {
 	
 	// Funcionalidades:
 		
-		
+
 		Scanner ler = new Scanner(System.in);
 		ArrayList<Filme> dadosFilmes = new ArrayList<Filme>();
 		Scanner input = new Scanner(System.in);
@@ -140,7 +144,7 @@ public class Filme {
 										   + "Por favor insira um número novamente");
 						break;
 				}
-			} while (1 > num || num > 6);
+			} while (1 > num || num > 3);
 				
 		}
 		
